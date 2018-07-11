@@ -319,6 +319,7 @@ DarthMal.ConnectObjToHTML();
 //Obiwan Luke Vadar Mal
 function Attack(){
 
+  //This is calling all of the methods in the character objects
   //if champion is Obiwan
   if(champion === "Obiwan" && currentOpponent === "Luke"){
     ObiWan.AttackLuke();
