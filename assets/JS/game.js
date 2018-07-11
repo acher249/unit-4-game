@@ -8,8 +8,8 @@ var pickedChampion = false;
 var pickedOpponent = false;
 
 //this is to feed them objects.
-var champion;
-var opponent;
+var champion = "";
+var currentOpponent = "";
 
 //turn off drop zone 3
 var dropZone3 = $("drop-target3");
@@ -35,6 +35,28 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
 
     //Also make enemies inactive until first opponent is dead..
     document.getElementById("drag-elements").classList.add("inactiveLink");
+
+
+    //***************************************************************************/
+    
+    //Check Opponent you chose to be current Opponent
+    if ($("#drop-target3").find("#ObiWanHealthID").length > 0){ 
+      console.log("Your Opponent is ObiWan");
+      currentOpponent = "Obiwan"
+    }
+    else if ($("#drop-target3").find("#LukeHealthID").length > 0){ 
+      console.log("Your Opponent is Luke Skywalker");
+      currentOpponent = "Luke"
+    }
+    else if ($("#drop-target3").find("#VadarHealthID").length > 0){ 
+      console.log("Your Opponent is Darth Vadar");
+      currentOpponent = "Vadar"
+    }
+    else if($("#drop-target3").find("#MalHealthID").length > 0){ 
+      console.log("Your Opponent is Darth Mal");
+      currentOpponent = "Mal"
+    };
+
   }  
 
   // ** 
@@ -56,14 +78,36 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
 
     // This makes
     document.getElementById("drop-target2").classList.add("inactiveLink");
+
+    //**********************************************************************************/
+    //Check which Champion you chose
+    if ($("#drop-target2").find("#ObiWanHealthID").length > 0){ 
+      console.log("Your Champion is ObiWan");
+      champion = "Obiwan"
+    }
+    else if ($("#drop-target2").find("#LukeHealthID").length > 0){ 
+      console.log("Your Champion is Luke Skywalker");
+      champion = "Luke"
+    }
+    else if ($("#drop-target2").find("#VadarHealthID").length > 0){ 
+      console.log("Your Champion is Darth Vadar");
+      champion = "Vadar"
+    }
+    else if($("#drop-target2").find("#MalHealthID").length > 0){ 
+      console.log("Your Champion is Darth Mal");
+      champion = "Mal"
+    };
   }
+
+  
+
 });
 
 
 function pickedChampionFn() {
   pickedChampion = true;
   swal({
-        title: "You Picked Your Champion",
+        title: "You Picked Champion: " + champion,
         icon: "info",
         text: "Now pick your first opponent!",
         button: "Continue", 
@@ -73,7 +117,7 @@ function pickedChampionFn() {
 function pickedOpponentFn() {
   pickedOpponent = true;
   swal({
-        title: "You Picked Your First Opponent",
+        title: "You Picked Opponent: " + currentOpponent,
         icon: "info",
         text: "Now you need to fight him!",
         button: "Continue", 
@@ -108,8 +152,6 @@ var ObiWan = {
   //   //link to HTML from inside the object?
   // }
 };
-
-console.log(ObiWan);
 
 var LukeSkywalker = {
   name: "LukeSkywalker",
@@ -170,17 +212,17 @@ var DarthMal = {
     MalHealthID.textContent = "Health: " + this.health;
   },
 
-  // Attack: function(/*other chracter*/) {
-    
-  //   //Code to attack other character
-  //   //Decrease OtherCharacter.Health by this.AttackPower
-  //   //Decrease this.Heath by OtherCharacter.CounterAttackPower
-  //   //Decrease this.Heath by OtherCharacter.AttackPower
-  //   //Decrese OtherCharacter.Health by this.CounterAttackPower
+  //attack ObiWan
+  malAttackObiWan: function(Obiwan) {
 
-  //   //link to HTML from inside the object?
-    
-  // }
+    Obiwan.health = Obiwan.health - this.attackPower;
+    this.health = this.health - Obiwan.counterAttackPower;
+    this.health = this.health - Obiwan.attackPower;
+    Obiwan.health = Obiwan.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    Obiwan.ConnectObjToHTML();
+  }
 };
 
 //Connect objects to HTML Health Divs
@@ -189,48 +231,17 @@ LukeSkywalker.ConnectObjToHTML();
 DarthVadar.ConnectObjToHTML();
 DarthMal.ConnectObjToHTML();
 
-//Figure out Attacking:
-// find what character object is in Drop Zone 2 == champion
-// find what character is in Drop Zone 3 == Opponent
-// then on click attack
-
-//trying onChange event
-//document.getElementById("ObiWanHealthID").addEventListener("change", Attack);
-
-// .parent is not working..
-// var target = document.getElementById("obiwan");
-// var targetParent = target.parent();
-// console.log(targetParent);
-
+//Obiwan Luke Vadar Mal
 function Attack(){
 
-  //****************************************/
-  //I am trying to find which character was dropped in Drop Zone 2 by finding if they are a 
-  // child to the new Drop Zone 2 parent div.. Then I can find which character was dropped in Zone3
-  // then I can have them fight. But I cant have them fight until I know who is fighting who.
-
-  // If the drop zone 2 div contains the obiwan health div
-  // then you have chosen ObiWan .. repeat for other characters..
-  var dropZone2 = document.getElementById("drop-target2");
-  var ObiWanHealthID = document.getElementById("ObiWanHealthID");
-  console.log("dropzone2: : " + dropZone2);
-  console.log("ObiWan Health ID: " + ObiWanHealthID);
-
-
-  // var target = document.getElementById("obiwan");
-  // var targetParent = target.parent();
-
-  // if($("obiwan").parent("")){
-
-  // }
-
-  if(dropZone2.contains(ObiWanHealthID)){
-    console.log("Your Champion is ObiWan");
-  }
-
+    if(champion === "Mal" && currentOpponent === "Obiwan"){
+      malAttackObiWan();
+    }
+    //do all fighting character opptions
 
 }
 
+//make attack on click
 Attack();
 
 
