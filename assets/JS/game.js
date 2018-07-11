@@ -141,16 +141,38 @@ var ObiWan = {
     obiwanHealthID.textContent = "Health: " + this.health;
   },
 
-  // Attack: function(/*other chracter*/) {
-    
-  //   //Code to attack other character
-  //   //Decrease OtherCharacter.Health by this.AttackPower
-  //   //Decrease this.Heath by OtherCharacter.CounterAttackPower
-  //   //Decrease this.Heath by OtherCharacter.AttackPower
-  //   //Decrese OtherCharacter.Health by this.CounterAttackPower
+  AttackLuke: function(LukeSkywalker) {
 
-  //   //link to HTML from inside the object?
-  // }
+    LukeSkywalker.health = LukeSkywalker.health - this.attackPower;
+    this.health = this.health - LukeSkywalker.counterAttackPower;
+    this.health = this.health - LukeSkywalker.attackPower;
+    LukeSkywalker.health = LukeSkywalker.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    LukeSkywalker.ConnectObjToHTML();
+  },
+
+  AttackVadar: function(DarthVadar) {
+
+    DarthVadar.health = DarthVadar.health - this.attackPower;
+    this.health = this.health - DarthVadar.counterAttackPower;
+    this.health = this.health - DarthVadar.attackPower;
+    DarthVadar.health = DarthVadar.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    DarthVadar.ConnectObjToHTML();
+  },
+
+  AttackMal: function(DarthMal) {
+
+    DarthMal.health = DarthMal.health - this.attackPower;
+    this.health = this.health - DarthMal.counterAttackPower;
+    this.health = this.health - DarthMal.attackPower;
+    DarthMal.health = DarthMal.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    DarthMal.ConnectObjToHTML();
+  }
 };
 
 var LukeSkywalker = {
@@ -164,17 +186,38 @@ var LukeSkywalker = {
     LukeHealthID.textContent = "Health: " + this.health;
   },
 
-  // Attack: function(/*other chracter*/) {
-    
-  //   //Code to attack other character
-  //   //Decrease OtherCharacter.Health by this.AttackPower
-  //   //Decrease this.Heath by OtherCharacter.CounterAttackPower
-  //   //Decrease this.Heath by OtherCharacter.AttackPower
-  //   //Decrese OtherCharacter.Health by this.CounterAttackPower
+  AttackObiWan: function(Obiwan) {
 
-  //   //link to HTML from inside the object?
-    
-  // }
+    Obiwan.health = Obiwan.health - this.attackPower;
+    this.health = this.health - Obiwan.counterAttackPower;
+    this.health = this.health - Obiwan.attackPower;
+    Obiwan.health = Obiwan.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    Obiwan.ConnectObjToHTML();
+  },
+
+  AttackVadar: function(DarthVadar) {
+
+    DarthVadar.health = DarthVadar.health - this.attackPower;
+    this.health = this.health - DarthVadar.counterAttackPower;
+    this.health = this.health - DarthVadar.attackPower;
+    DarthVadar.health = DarthVadar.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    DarthVadar.ConnectObjToHTML();
+  },
+
+  AttackMal: function(DarthMal) {
+
+    DarthMal.health = DarthMal.health - this.attackPower;
+    this.health = this.health - DarthMal.counterAttackPower;
+    this.health = this.health - DarthMal.attackPower;
+    DarthMal.health = DarthMal.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    DarthMal.ConnectObjToHTML();
+  }
 };
 
 var DarthVadar = {
@@ -188,17 +231,38 @@ var DarthVadar = {
     VadarHealthID.textContent = "Health: " + this.health;
   },
 
-  // Attack: function(/*other chracter*/) {
-    
-  //   //Code to attack other character
-  //   //Decrease OtherCharacter.Health by this.AttackPower
-  //   //Decrease this.Heath by OtherCharacter.CounterAttackPower
-  //   //Decrease this.Heath by OtherCharacter.AttackPower
-  //   //Decrese OtherCharacter.Health by this.CounterAttackPower
+  AttackObiWan: function(Obiwan) {
 
-  //   //link to HTML from inside the object?
-    
-  // }
+    Obiwan.health = Obiwan.health - this.attackPower;
+    this.health = this.health - Obiwan.counterAttackPower;
+    this.health = this.health - Obiwan.attackPower;
+    Obiwan.health = Obiwan.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    Obiwan.ConnectObjToHTML();
+  },
+
+  AttackLuke: function(LukeSkywalker) {
+
+    LukeSkywalker.health = LukeSkywalker.health - this.attackPower;
+    this.health = this.health - LukeSkywalker.counterAttackPower;
+    this.health = this.health - LukeSkywalker.attackPower;
+    LukeSkywalker.health = LukeSkywalker.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    LukeSkywalker.ConnectObjToHTML();
+  },
+
+  AttackMal: function(DarthMal) {
+
+    DarthMal.health = DarthMal.health - this.attackPower;
+    this.health = this.health - DarthMal.counterAttackPower;
+    this.health = this.health - DarthMal.attackPower;
+    DarthMal.health = DarthMal.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    DarthMal.ConnectObjToHTML();
+  }
 };
 
 var DarthMal = {
@@ -212,8 +276,7 @@ var DarthMal = {
     MalHealthID.textContent = "Health: " + this.health;
   },
 
-  //attack ObiWan
-  malAttackObiWan: function(Obiwan) {
+  AttackObiWan: function(Obiwan) {
 
     Obiwan.health = Obiwan.health - this.attackPower;
     this.health = this.health - Obiwan.counterAttackPower;
@@ -222,6 +285,28 @@ var DarthMal = {
 
     this.ConnectObjToHTML();
     Obiwan.ConnectObjToHTML();
+  },
+
+  AttackLuke: function(LukeSkywalker) {
+
+    LukeSkywalker.health = LukeSkywalker.health - this.attackPower;
+    this.health = this.health - LukeSkywalker.counterAttackPower;
+    this.health = this.health - LukeSkywalker.attackPower;
+    LukeSkywalker.health = LukeSkywalker.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    LukeSkywalker.ConnectObjToHTML();
+  },
+
+  AttackVadar: function(DarthVadar) {
+
+    DarthVadar.health = DarthVadar.health - this.attackPower;
+    this.health = this.health - DarthVadar.counterAttackPower;
+    this.health = this.health - DarthVadar.attackPower;
+    DarthVadar.health = DarthVadar.health - this.counterAttackPower;
+
+    this.ConnectObjToHTML();
+    DarthVadar.ConnectObjToHTML();
   }
 };
 
@@ -234,10 +319,49 @@ DarthMal.ConnectObjToHTML();
 //Obiwan Luke Vadar Mal
 function Attack(){
 
-    if(champion === "Mal" && currentOpponent === "Obiwan"){
-      malAttackObiWan();
-    }
-    //do all fighting character opptions
+  //if champion is Obiwan
+  if(champion === "Obiwan" && currentOpponent === "Luke"){
+    ObiWan.AttackLuke();
+  }
+  else if (champion === "Obiwan" && currentOpponent === "Vadar"){
+    ObiWan.AttackVadar();
+  }
+  else if (champion === "Obiwan" && currentOpponent === "Mal"){
+    ObiWan.AttackMal();
+  }
+
+  //if champion is Luke
+  else if(champion === "Luke" && currentOpponent === "Obiwan"){
+    LukeSkywalker.AttackObiWan();
+  }
+  else if (champion === "Luke" && currentOpponent === "Vadar"){
+    LukeSkywalker.AttackVadar();
+  }
+  else if (champion === "Luke" && currentOpponent === "Mal"){
+    LukeSkywalker.AttackMal();
+  }
+
+  //if champion is Darth Vadar
+  else if(champion === "Vadar" && currentOpponent === "Obiwan"){
+    DarthVadar.AttackObiWan();
+  }
+  else if (champion === "Vadar" && currentOpponent === "Luke"){
+    DarthVadar.AttackLuke();
+  }
+  else if (champion === "Vadar" && currentOpponent === "Mal"){
+    DarthVadar.AttackMal();
+  }
+
+  //if champion is Darth Mal
+  else if(champion === "Mal" && currentOpponent === "Obiwan"){
+    DarthMal.AttackObiWan();
+  }
+  else if (champion === "Mal" && currentOpponent === "Luke"){
+    DarthMal.AttackLuke();
+  }
+  else if (champion === "Mal" && currentOpponent === "Vadar"){
+    DarthMal.AttackVadar();
+  }
 
 }
 
