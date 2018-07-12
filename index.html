@@ -117,7 +117,7 @@
         <center class="centerArrowTop">
           <div id="drop-targetArrowTop">
             <img id="arrowImageTop" src="./assets/images/arrow.png">
-            <button type="button"  id="btn-primary" class="btn btn-primary">Primary</button>
+            <button type="button"  id="btn-primary" class="btn btn-primary">Attack</button>
           </div>
         </center>
         
@@ -159,6 +159,11 @@
         }
 
         setTimeout(welcomeAlert, 1);
+
+        $("#btn-primary").click(function(){
+            Attack();
+            console.log("button clicked");
+        }); 
 
       });
 

@@ -1,5 +1,8 @@
 `use strict`;
 
+// *****************   BUG    ****************//
+// this is messing everything up. causing nulls
+// can't do click events..
 function $(id) {
   return document.getElementById(id);
 }
@@ -74,9 +77,6 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
     $(".changeText").text("Enemies");
     //turn on drop zone 3
     dropZone3.style.display = "block";
-
-    // want to just make the margin top larger.. but can't grab it .. says null
-    // document.getElementsById("drop-targetArrowTop").style.margin-top = someNumber;
 
     // turn background red
     document.getElementById("drag-elements").style.backgroundColor = "#eda1a1";
@@ -372,10 +372,6 @@ function Attack(){
   }
 
 }
-
-//make attack on click
-Attack();
-
 
 // Check if Other character.health is greater than 0 if not, dead.
 // Next opponenet..
