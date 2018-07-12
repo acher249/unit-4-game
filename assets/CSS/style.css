@@ -134,24 +134,19 @@ p {
     height: 100%;
   }
 
-  .arrowImageTop {
-    margin-top: 125px;
-    margin-left: 10px;
+  #arrowImageTop {
+    /* margin-top: 125px; */
+    margin-right: 30%;
     opacity: .2;
-  }
-  
-  .arrowImageBot {
-    margin-top: 485px;
-    margin-left: 10px;
   }
 
   .centerArrowTop {
     float: center;
-    position: relative;
+    /* position: absolute; */
     width: 30px;
     margin-top: 0px;
     margin-right: 30%;
-    margin-left: auto;
+    margin-left: 1200px;
     height: 0px;
   }
 

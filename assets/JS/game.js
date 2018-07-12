@@ -14,7 +14,10 @@ var currentOpponent = "";
 //turn off drop zone 3
 var dropZone3 = $("drop-target3");
 dropZone3.style.display = "none";
-
+var arrow = document.getElementById("arrowImageTop");
+arrow.style.display = "block";
+var fightButton = document.getElementById("btn-primary");
+fightButton.style.display = "none";
 
 
 dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
@@ -36,6 +39,8 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
     //Also make enemies inactive until first opponent is dead..
     document.getElementById("drag-elements").classList.add("inactiveLink");
 
+    arrow.style.display = "none";
+    fightButton.style.display = "block";
 
     //***************************************************************************/
     
@@ -80,7 +85,7 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
     document.getElementById("drop-target2").classList.add("inactiveLink");
 
     //*******************************************************************************/
-    
+
     //Check which Champion you chose
     if ($("#drop-target2").find("#ObiWanHealthID").length > 0){ 
       console.log("Your Champion is ObiWan");

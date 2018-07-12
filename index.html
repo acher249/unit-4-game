@@ -110,17 +110,14 @@
 
                 </div>
             </div>
-
-            <!-- Use Display to show Traits of Players -->
-            <!-- <div class="right">
-              <div id="display">Display</div> -->
           </div>
         </div>
 
         <!-- Arrows -->
         <center class="centerArrowTop">
           <div id="drop-targetArrowTop">
-            <img class="arrowImageTop" src="./assets/images/arrow.png">
+            <img id="arrowImageTop" src="./assets/images/arrow.png">
+            <button type="button"  id="btn-primary" class="btn btn-primary">Primary</button>
           </div>
         </center>
         
@@ -155,7 +152,7 @@
         function welcomeAlert() {
           swal({
             title: "Get Ready To Battle",
-            icon: "error",
+            icon: "success",
             text: "Choose Your Champion!",
             button: "Continue", 
           });  
