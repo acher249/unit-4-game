@@ -377,30 +377,50 @@ function Attack(){
 // Check if Other character.health is greater than 0 if not, dead.
 // Next opponenet..
 
+var fightButton = document.getElementById("btn-primary"); 
 
-function welcomeAlert() {
-  swal({
-    title: "Get Ready To Battle",
-    icon: "success",
-    text: "Choose Your Champion!",
-    button: "Continue", 
-  });  
-}
-
-setTimeout(welcomeAlert, 1);
-
-$("#btn-primary").click(function(){
+fightButton.onclick = function(){
   Attack();
 
-  console.log(Obiwan.health);
+  if(ObiWan.health <= 0) {
+    if (champion == ObiWan){
+      console.log("Obiwan Died: You Lose");
+      //Do things
+    }
+    else{
+      console.log("You have defeated your opponent: " + currentOpponent);
+      //Do things
+    }
+  }
+  else if(LukeSkywalker.health <= 0) {
+    if (champion == LukeSkywalker){
+      console.log("Luke Skywalker Died: You Lose");
+      //Do things
+    }
+    else{
+      console.log("You have defeated your opponent: " + currentOpponent);
+      //Do things
+    }
+  }
+  else if(DarthVadar.health <= 0) {
+    if (champion == DarthVadar){
+      console.log("Darth Vadar Died: You Lose");
+      //Do things
+    }
+    else{
+      console.log("You have defeated your opponent: " + currentOpponent);
+      //Do things
+    }
+  }
+  else if(DarthMal.health <= 0) {
+    if (champion == DarthMal){
+      console.log("Darth Mal Died: You Lose");
+      //Do things
+    }
+    else{
+      console.log("You have defeated your opponent: " + currentOpponent);
+      //Do things
+    }
+  }
 
-  // if () {
-
-  // }
-
-}); 
-
-
-//Call the function inside
-//ObiWan.Attack(other character);
-//console.log(ObiWan.Name);
+};
