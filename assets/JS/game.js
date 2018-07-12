@@ -7,6 +7,7 @@ function $(id) {
   return document.getElementById(id);
 }
 
+
 var pickedChampion = false;
 var pickedOpponent = false;
 
@@ -134,9 +135,9 @@ function pickedOpponentFn() {
 //**********************  Obiwan Object  ****************************/
 var ObiWan = {
   name: "ObiWan",
-  health: 100,
-  attackPower: 75,
-  counterAttackPower: 20,
+  health: 105,
+  attackPower: 17,
+  counterAttackPower: 7,
 
   ConnectObjToHTML: function (){
     var obiwanHealthID = document.getElementById("ObiWanHealthID");
@@ -180,9 +181,9 @@ var ObiWan = {
 //**********************  Luke Object  *******************************/
 var LukeSkywalker = {
   name: "LukeSkywalker",
-  health: 100,
-  attackPower: 80,
-  counterAttackPower: 25,
+  health: 120,
+  attackPower: 13,
+  counterAttackPower: 4,
 
   ConnectObjToHTML: function (){
     var LukeHealthID = document.getElementById("LukeHealthID");
@@ -226,9 +227,9 @@ var LukeSkywalker = {
 //**********************  Darth Vadar Object  **********************/
 var DarthVadar = {
   name: "DarthVadar",
-  health: 100,
-  attackPower: 60,
-  counterAttackPower: 15,
+  health: 90,
+  attackPower: 12,
+  counterAttackPower: 5,
 
   ConnectObjToHTML: function (){
     var VadarHealthID = document.getElementById("VadarHealthID");
@@ -272,9 +273,9 @@ var DarthVadar = {
 //**********************  Darth Mal Object  ***********************/
 var DarthMal = {
   name: "DarthMal",
-  health: 100,
-  attackPower: 70,
-  counterAttackPower: 12,
+  health: 85,
+  attackPower: 7,
+  counterAttackPower: 3,
 
   ConnectObjToHTML: function (){
     var MalHealthID = document.getElementById("MalHealthID");
@@ -329,46 +330,46 @@ function Attack(){
   //This is calling all of the methods in the character objects
   //if champion is Obiwan
   if(champion === "Obiwan" && currentOpponent === "Luke"){
-    ObiWan.AttackLuke();
+    ObiWan.AttackLuke(LukeSkywalker);
   }
   else if (champion === "Obiwan" && currentOpponent === "Vadar"){
-    ObiWan.AttackVadar();
+    ObiWan.AttackVadar(DarthVadar);
   }
   else if (champion === "Obiwan" && currentOpponent === "Mal"){
-    ObiWan.AttackMal();
+    ObiWan.AttackMal(DarthMal);
   }
 
   //if champion is Luke
   else if(champion === "Luke" && currentOpponent === "Obiwan"){
-    LukeSkywalker.AttackObiWan();
+    LukeSkywalker.AttackObiWan(ObiWan);
   }
   else if (champion === "Luke" && currentOpponent === "Vadar"){
-    LukeSkywalker.AttackVadar();
+    LukeSkywalker.AttackVadar(DarthVadar);
   }
   else if (champion === "Luke" && currentOpponent === "Mal"){
-    LukeSkywalker.AttackMal();
+    LukeSkywalker.AttackMal(DarthMal);
   }
 
   //if champion is Darth Vadar
   else if(champion === "Vadar" && currentOpponent === "Obiwan"){
-    DarthVadar.AttackObiWan();
+    DarthVadar.AttackObiWan(ObiWan);
   }
   else if (champion === "Vadar" && currentOpponent === "Luke"){
-    DarthVadar.AttackLuke();
+    DarthVadar.AttackLuke(LukeSkywalker);
   }
   else if (champion === "Vadar" && currentOpponent === "Mal"){
-    DarthVadar.AttackMal();
+    DarthVadar.AttackMal(DarthMal);
   }
 
   //if champion is Darth Mal
   else if(champion === "Mal" && currentOpponent === "Obiwan"){
-    DarthMal.AttackObiWan();
+    DarthMal.AttackObiWan(ObiWan);
   }
   else if (champion === "Mal" && currentOpponent === "Luke"){
-    DarthMal.AttackLuke();
+    DarthMal.AttackLuke(LukeSkywalker);
   }
   else if (champion === "Mal" && currentOpponent === "Vadar"){
-    DarthMal.AttackVadar();
+    DarthMal.AttackVadar(DarthVadar);
   }
 
 }
