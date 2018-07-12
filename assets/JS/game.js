@@ -377,6 +377,30 @@ function Attack(){
 // Check if Other character.health is greater than 0 if not, dead.
 // Next opponenet..
 
+
+function welcomeAlert() {
+  swal({
+    title: "Get Ready To Battle",
+    icon: "success",
+    text: "Choose Your Champion!",
+    button: "Continue", 
+  });  
+}
+
+setTimeout(welcomeAlert, 1);
+
+$("#btn-primary").click(function(){
+  Attack();
+
+  console.log(Obiwan.health);
+
+  // if () {
+
+  // }
+
+}); 
+
+
 //Call the function inside
 //ObiWan.Attack(other character);
 //console.log(ObiWan.Name);
