@@ -79,7 +79,8 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
     // This makes
     document.getElementById("drop-target2").classList.add("inactiveLink");
 
-    //**********************************************************************************/
+    //*******************************************************************************/
+    
     //Check which Champion you chose
     if ($("#drop-target2").find("#ObiWanHealthID").length > 0){ 
       console.log("Your Champion is ObiWan");
@@ -124,12 +125,8 @@ function pickedOpponentFn() {
       });  
 }
 
-//************************************************** */
-//Objects//
-//************************************************** */
 
-//put this inside object... tie it all together
-
+//**********************  Obiwan Object  ****************************/
 var ObiWan = {
   name: "ObiWan",
   health: 100,
@@ -175,6 +172,7 @@ var ObiWan = {
   }
 };
 
+//**********************  Luke Object  *******************************/
 var LukeSkywalker = {
   name: "LukeSkywalker",
   health: 100,
@@ -220,6 +218,7 @@ var LukeSkywalker = {
   }
 };
 
+//**********************  Darth Vadar Object  **********************/
 var DarthVadar = {
   name: "DarthVadar",
   health: 100,
@@ -265,6 +264,7 @@ var DarthVadar = {
   }
 };
 
+//**********************  Darth Mal Object  ***********************/
 var DarthMal = {
   name: "DarthMal",
   health: 100,
@@ -309,6 +309,8 @@ var DarthMal = {
     DarthVadar.ConnectObjToHTML();
   }
 };
+
+//*********************************************************************/
 
 //Connect objects to HTML Health Divs
 ObiWan.ConnectObjToHTML();
