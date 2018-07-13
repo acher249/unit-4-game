@@ -39,8 +39,6 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
     // after opponent dies make sure that we remove inactive class 
     //so that a new opponent
     document.getElementById("drop-target3").classList.add("inactiveLink");
-
-    //Also make enemies inactive until first opponent is dead..
     document.getElementById("drag-elements").classList.add("inactiveLink");
 
     arrow.style.display = "none";
@@ -407,11 +405,14 @@ fightButton.onclick = function(){
       console.log("You have defeated your opponent: " + currentOpponent);
       console.log("current Opponent ID: " + currentOpponentID);
       //Move Opponent Div to Dead Characters Div
+      YouKilled();
       getID();
       document.getElementById('drop-target').appendChild(
         document.getElementById(currentOpponentID)
       );
       //Take off inactiveLink class on DropZone3 and Drag-Elements zone so that we can drag.
+      document.getElementById("drop-target3").classList.remove("inactiveLink");
+      document.getElementById("drag-elements").classList.remove("inactiveLink");
     }
   }
   else if(LukeSkywalker.health <= 0) {
@@ -423,10 +424,13 @@ fightButton.onclick = function(){
       console.log("You have defeated your opponent: " + currentOpponent);
       console.log("current Opponent ID: " + currentOpponentID);
       //Move Opponent Div to Dead Characters Div
+      YouKilled();
       getID();
       document.getElementById('drop-target').appendChild(
         document.getElementById(currentOpponentID)
       );
+      document.getElementById("drop-target3").classList.remove("inactiveLink");
+      document.getElementById("drag-elements").classList.remove("inactiveLink");
     }
   }
   else if(DarthVadar.health <= 0) {
@@ -438,10 +442,13 @@ fightButton.onclick = function(){
       console.log("You have defeated your opponent: " + currentOpponent);
       console.log("current Opponent ID: " + currentOpponentID);
       //Move Opponent Div to Dead Characters Div
+      YouKilled();
       getID();
       document.getElementById('drop-target').appendChild(
         document.getElementById(currentOpponentID)
       );
+      document.getElementById("drop-target3").classList.remove("inactiveLink");
+      document.getElementById("drag-elements").classList.remove("inactiveLink");
     }
   }
   else if(DarthMal.health <= 0) {
@@ -453,10 +460,13 @@ fightButton.onclick = function(){
       console.log("You have defeated your opponent: " + currentOpponent);
       console.log("current Opponent ID: " + currentOpponentID);
       //Move Opponent Div to Dead Characters Div
+      YouKilled();
       getID();
       document.getElementById('drop-target').appendChild(
         document.getElementById(currentOpponentID)
       );
+      document.getElementById("drop-target3").classList.remove("inactiveLink");
+      document.getElementById("drag-elements").classList.remove("inactiveLink");
     }
   }
 
@@ -467,6 +477,15 @@ function YouLose(){
     title: "You Lose",
     icon: "error",
     text: "You will have to play again",
+    button: "Continue", 
+  });
+}
+
+function YouKilled(){
+  swal({
+    title: "You Killed: " + currentOpponent,
+    icon: "success",
+    text: "Now pick your next opponent",
     button: "Continue", 
   });
 }
