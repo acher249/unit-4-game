@@ -14,6 +14,7 @@ var pickedOpponent = false;
 //this is to feed them objects.
 var champion = "";
 var currentOpponent = "";
+var currentOpponentID = "";
 
 //turn off drop zone 3
 var dropZone3 = $("drop-target3");
@@ -50,18 +51,22 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
     if ($("#drop-target3").find("#ObiWanHealthID").length > 0){ 
       console.log("Your Opponent is ObiWan");
       currentOpponent = "Obiwan"
+      currentOpponentID ="obiwan";
     }
     else if ($("#drop-target3").find("#LukeHealthID").length > 0){ 
       console.log("Your Opponent is Luke Skywalker");
       currentOpponent = "Luke"
+      currentOpponentID ="luke";
     }
     else if ($("#drop-target3").find("#VadarHealthID").length > 0){ 
       console.log("Your Opponent is Darth Vadar");
       currentOpponent = "Vadar"
+      currentOpponentID ="vadar";
     }
     else if($("#drop-target3").find("#MalHealthID").length > 0){ 
       console.log("Your Opponent is Darth Mal");
       currentOpponent = "Mal"
+      currentOpponentID ="mal";
     };
 
   }  
@@ -84,6 +89,18 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
     document.getElementById("drop-target2").classList.add("inactiveLink");
 
     //*******************************************************************************/
+
+    function getID(){
+      if(currentOpponent === "Obiwan"){
+        currentOpponentID = "obiwan";
+      }else if (currentOpponent === "Luke"){
+        currentOpponentID = "luke";
+      }else if (currentOpponent === "Vadar"){
+        currentOpponentID = "vadar";
+      }else if (currentOpponent === "Mal"){
+        currentOpponentID = "mal";
+      }
+    }
 
     //Check which Champion you chose
     if ($("#drop-target2").find("#ObiWanHealthID").length > 0){ 
@@ -375,21 +392,6 @@ function Attack(){
 // Check if Other character.health is greater than 0 if not, dead.
 var fightButton = document.getElementById("btn-primary"); 
 
-var currentOpponentID = "";
-
-function getID(){
-  if(currentOpponent === "Obiwan"){
-    currentOpponentID = "obiwan";
-  }else if (currentOpponent === "Luke"){
-    currentOpponentID = "luke";
-  }else if (currentOpponent === "Vadar"){
-    currentOpponentID = "vadar";
-  }else{
-    currentOpponentID = "mal";
-  }
-}
-
-
 fightButton.onclick = function(){
   console.log("Clicked");
 
@@ -406,7 +408,6 @@ fightButton.onclick = function(){
       console.log("current Opponent ID: " + currentOpponentID);
       //Move Opponent Div to Dead Characters Div
       YouKilled();
-      getID();
       document.getElementById('drop-target').appendChild(
         document.getElementById(currentOpponentID)
       );
@@ -425,7 +426,6 @@ fightButton.onclick = function(){
       console.log("current Opponent ID: " + currentOpponentID);
       //Move Opponent Div to Dead Characters Div
       YouKilled();
-      getID();
       document.getElementById('drop-target').appendChild(
         document.getElementById(currentOpponentID)
       );
@@ -443,7 +443,6 @@ fightButton.onclick = function(){
       console.log("current Opponent ID: " + currentOpponentID);
       //Move Opponent Div to Dead Characters Div
       YouKilled();
-      getID();
       document.getElementById('drop-target').appendChild(
         document.getElementById(currentOpponentID)
       );
@@ -461,7 +460,6 @@ fightButton.onclick = function(){
       console.log("current Opponent ID: " + currentOpponentID);
       //Move Opponent Div to Dead Characters Div
       YouKilled();
-      getID();
       document.getElementById('drop-target').appendChild(
         document.getElementById(currentOpponentID)
       );
