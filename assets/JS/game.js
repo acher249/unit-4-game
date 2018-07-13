@@ -20,7 +20,7 @@ var currentOpponentID = "";
 var dropZone3 = $("drop-target3");
 dropZone3.style.display = "none";
 var arrow = document.getElementById("arrowImageTop");
-arrow.style.display = "block";
+arrow.style.display = "inline";
 var fightButton = document.getElementById("btn-primary");
 fightButton.style.display = "none";
 
@@ -89,19 +89,6 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
     document.getElementById("drop-target2").classList.add("inactiveLink");
 
     //*******************************************************************************/
-
-    function getID(){
-      if(currentOpponent === "Obiwan"){
-        currentOpponentID = "obiwan";
-      }else if (currentOpponent === "Luke"){
-        currentOpponentID = "luke";
-      }else if (currentOpponent === "Vadar"){
-        currentOpponentID = "vadar";
-      }else if (currentOpponent === "Mal"){
-        currentOpponentID = "mal";
-      }
-    }
-
     //Check which Champion you chose
     if ($("#drop-target2").find("#ObiWanHealthID").length > 0){ 
       console.log("Your Champion is ObiWan");
@@ -438,6 +425,7 @@ fightButton.onclick = function(){
       console.log("Darth Vadar Died: You Lose");
       YouLose();
     }
+    //shouldnt get into this else statement
     else{
       console.log("You have defeated your opponent: " + currentOpponent);
       console.log("current Opponent ID: " + currentOpponentID);
