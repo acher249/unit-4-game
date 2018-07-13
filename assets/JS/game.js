@@ -46,6 +46,11 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
 
     arrow.style.display = "none";
     fightButton.style.display = "block";
+    fightButton.style.width = "220px";
+    fightButton.style.height = "60px";
+    var buttonElement = document.getElementById('btn-primary');
+    buttonElement.style.marginTop = "220px";
+    
 
     //***************************************************************************/
     
@@ -84,6 +89,9 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
     //turn on drop zone 3
     dropZone3.style.display = "block";
     oppDrop.style.display = "block";
+
+    var arrowElement = document.getElementById('arrowImageTop');
+    arrowElement.style.marginTop = "360px";
 
     // turn background red
     document.getElementById("drag-elements").style.backgroundColor = "#eda1a1";

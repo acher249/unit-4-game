@@ -122,8 +122,9 @@ p {
     position: absolute;
     margin-top: 130px;
     width: 95;
-    margin-left: 70%;
+    margin-left: 63%;
     height: 100%;
+    opacity: .2;
   }
 
   .right {
