@@ -377,52 +377,86 @@ function Attack(){
 // Check if Other character.health is greater than 0 if not, dead.
 var fightButton = document.getElementById("btn-primary"); 
 
+var currentOpponentID = "";
+
+function getID(){
+  if(currentOpponent === "Obiwan"){
+    currentOpponentID = "obiwan";
+  }else if (currentOpponent === "Luke"){
+    currentOpponentID = "luke";
+  }else if (currentOpponent === "Vadar"){
+    currentOpponentID = "vadar";
+  }else{
+    currentOpponentID = "mal";
+  }
+}
+
+
 fightButton.onclick = function(){
+  console.log("Clicked");
+
   Attack();
-  console.log(champion);
 
   if(ObiWan.health <= 0) {
-    console.log(champion);
-    if (champion = "Obiwan"){
+    if (champion === "Obiwan"){
       console.log("Obiwan Died: You Lose");
       YouLose();
+      //make fightButton not interactable
     }
     else{
       console.log("You have defeated your opponent: " + currentOpponent);
-      //Do things
+      console.log("current Opponent ID: " + currentOpponentID);
+      //Move Opponent Div to Dead Characters Div
+      getID();
+      document.getElementById('drop-target').appendChild(
+        document.getElementById(currentOpponentID)
+      );
+      //Take off inactiveLink class on DropZone3 and Drag-Elements zone so that we can drag.
     }
   }
   else if(LukeSkywalker.health <= 0) {
-    console.log(champion);
-    if (champion = "Luke"){
+    if (champion === "Luke"){
       console.log("Luke Skywalker Died: You Lose");
       YouLose();
     }
     else{
       console.log("You have defeated your opponent: " + currentOpponent);
-      //Do things
+      console.log("current Opponent ID: " + currentOpponentID);
+      //Move Opponent Div to Dead Characters Div
+      getID();
+      document.getElementById('drop-target').appendChild(
+        document.getElementById(currentOpponentID)
+      );
     }
   }
   else if(DarthVadar.health <= 0) {
-    console.log(champion);
-    if (champion = "Vadar"){
+    if (champion === "Vadar"){
       console.log("Darth Vadar Died: You Lose");
       YouLose();
     }
     else{
       console.log("You have defeated your opponent: " + currentOpponent);
-      //Do things
+      console.log("current Opponent ID: " + currentOpponentID);
+      //Move Opponent Div to Dead Characters Div
+      getID();
+      document.getElementById('drop-target').appendChild(
+        document.getElementById(currentOpponentID)
+      );
     }
   }
   else if(DarthMal.health <= 0) {
-    console.log(champion);
-    if (champion = "Mal"){
+    if (champion === "Mal"){
       console.log("Darth Mal Died: You Lose");
       YouLose();
     }
     else{
       console.log("You have defeated your opponent: " + currentOpponent);
-      //Do things
+      console.log("current Opponent ID: " + currentOpponentID);
+      //Move Opponent Div to Dead Characters Div
+      getID();
+      document.getElementById('drop-target').appendChild(
+        document.getElementById(currentOpponentID)
+      );
     }
   }
 
