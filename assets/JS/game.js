@@ -375,17 +375,17 @@ function Attack(){
 }
 
 // Check if Other character.health is greater than 0 if not, dead.
-// Next opponenet..
-
 var fightButton = document.getElementById("btn-primary"); 
 
 fightButton.onclick = function(){
   Attack();
+  console.log(champion);
 
   if(ObiWan.health <= 0) {
-    if (champion == ObiWan){
+    console.log(champion);
+    if (champion = "Obiwan"){
       console.log("Obiwan Died: You Lose");
-      //Do things
+      YouLose();
     }
     else{
       console.log("You have defeated your opponent: " + currentOpponent);
@@ -393,9 +393,10 @@ fightButton.onclick = function(){
     }
   }
   else if(LukeSkywalker.health <= 0) {
-    if (champion == LukeSkywalker){
+    console.log(champion);
+    if (champion = "Luke"){
       console.log("Luke Skywalker Died: You Lose");
-      //Do things
+      YouLose();
     }
     else{
       console.log("You have defeated your opponent: " + currentOpponent);
@@ -403,9 +404,10 @@ fightButton.onclick = function(){
     }
   }
   else if(DarthVadar.health <= 0) {
-    if (champion == DarthVadar){
+    console.log(champion);
+    if (champion = "Vadar"){
       console.log("Darth Vadar Died: You Lose");
-      //Do things
+      YouLose();
     }
     else{
       console.log("You have defeated your opponent: " + currentOpponent);
@@ -413,9 +415,10 @@ fightButton.onclick = function(){
     }
   }
   else if(DarthMal.health <= 0) {
-    if (champion == DarthMal){
+    console.log(champion);
+    if (champion = "Mal"){
       console.log("Darth Mal Died: You Lose");
-      //Do things
+      YouLose();
     }
     else{
       console.log("You have defeated your opponent: " + currentOpponent);
@@ -424,3 +427,12 @@ fightButton.onclick = function(){
   }
 
 };
+
+function YouLose(){
+  swal({
+    title: "You Lose",
+    icon: "error",
+    text: "You will have to play again",
+    button: "Continue", 
+  });
+}
