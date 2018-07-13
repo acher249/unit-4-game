@@ -23,6 +23,8 @@ var arrow = document.getElementById("arrowImageTop");
 arrow.style.display = "inline";
 var fightButton = document.getElementById("btn-primary");
 fightButton.style.display = "none";
+var oppDrop = document.getElementById("oppDrop");
+oppDrop.style.display = "none";
 
 
 dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
@@ -81,6 +83,7 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
     $(".changeText").text("Enemies");
     //turn on drop zone 3
     dropZone3.style.display = "block";
+    oppDrop.style.display = "block";
 
     // turn background red
     document.getElementById("drag-elements").style.backgroundColor = "#eda1a1";
@@ -107,9 +110,6 @@ dragula([$('drag-elements'), $('drop-target2'), $('drop-target3')], {
       champion = "Mal"
     };
   }
-
-  
-
 });
 
 
